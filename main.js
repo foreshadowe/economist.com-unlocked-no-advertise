@@ -58,37 +58,9 @@ let removeAds = (htmlContentStr) => {
     adverts.forEach((advert) => {
         advert.remove()
     })
-
-    wrapper = addExtenCard(wrapper);
-
     putNewPage(wrapper)
 }
 
-let addExtenCard = (content)=>{
-    let card = document.createElement("A");
-    let desc = document.createElement("DIV");
-    let author = document.createElement("DIV");
-    let name = document.createElement("SPAN");
-
-    card.classList.add("exten-card");
-    desc.classList.add("exten-desc");
-    author.classList.add("exten-auth");
-    name.classList.add("exten-name");
-
-    desc.innerHTML = window.location.href == "https://www.economist.com/" ? "Ads are Removed !!!" : "Page is Unlocked!!!";
-    author.innerHTML = "By ";
-    name.innerHTML = "vivek9patel";
-
-    card.href = "https://www.linkedin.com/in/vivek9patel/";
-    card.setAttribute("target", "_blank");
-
-    author.appendChild(name);
-    card.appendChild(desc);
-    card.appendChild(author);
-
-    content.appendChild(card);
-    return content;
-}
 
 let putNewPage = (pageHtml) => document.documentElement.innerHTML = pageHtml.innerHTML;
 
